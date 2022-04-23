@@ -22,20 +22,19 @@
     "reasonml"
   ],
   "devDependencies": {
-    "bs-platform": "^5.0.3",
-    "reason-react": "^0.7.0"
+    "@rescript/react": "^0.10.3",
+    "rescript": "^9.1.4"
   },
   "dependencies": {
     "reactstrap": "^5.0.0"
   },
-  "peerDependencies": {
-    "reason-react": "^0.7.0"
-  },
+  "peerDependencies": {},
   "scripts": {
     "refmt": "find ./src -type f -name \"*.re\" | xargs bsrefmt --in-place",
-    "build": "bsb -make-world",
+    "build": "rescript build ",
     "watch": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "exit 0"
+    "test": "exit 0",
+    "convert": "rescript convert src/*"
   }
 }
