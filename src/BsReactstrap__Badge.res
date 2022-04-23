@@ -8,16 +8,3 @@ external make: (
   ~children: React.element=?,
   unit,
 ) => React.element = "Badge"
-
-module Jsx2 = {
-  let component = ReasonReact.statelessComponent(__MODULE__)
-
-  let make = (~color=?, ~pill=?, ~tag=?, ~className=?, ~cssModule=?, children) => {
-    let children = React.array(children)
-    ReasonReactCompat.wrapReactForReasonReact(
-      make,
-      makeProps(~color?, ~pill?, ~tag?, ~className?, ~cssModule?, ~children, ()),
-      children,
-    )
-  }
-}
